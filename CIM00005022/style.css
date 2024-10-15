@@ -1,0 +1,36 @@
+.login {
+    border: 3px solid yellow;
+    max-width: max-content;
+    padding: 20px 30px;
+    margin: 20px auto;
+    background-color: #f9f9f9;
+}
+body{
+    background-color: rgb(191, 179, 236);
+}
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-family: Arial, sans-serif;
+}
+input[type=email], input[type=password], input[type=url], input[type=search], select, textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 12px;
+    box-sizing: border-box;
+}
+input[type=button], input[type=submit], input[type=reset] {
+    display: block;
+    background-color: blanchedalmond;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    margin: 5px 0;
+}
+input[type=button]:hover, input[type=submit]:hover, input[type=reset]:hover {
+    background-color: #ffd700;
+}
+.form-section {
+    margin-bottom: 15px;
+}
