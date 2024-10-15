@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pimp My Shoes Contest Entry Form</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+       body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    padding: 20px;
+}
+
+.container {
+    width: 60%;
+    margin: 0 auto;
+}
+
+h1 {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+}
+
+h2 {
+    font-size: 20px;
+    margin-top: 30px;
+}
+
+label {
+    font-weight: bold;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 8px;
+    margin: 8px 0;
+}
+
+fieldset {
+    border: 2px solid #ddd;
+    padding: 10px;
+    margin-bottom: 15px;
+}
+
+legend {
+    font-size: 18px;
+    font-weight: bold;
+    padding: 0 10px;
+    color: #333;
+}
+
+button {
+    padding: 10px 15px;
+    margin: 10px 5px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 8px; /* Add border-radius */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>"Pimp My Shoes" Contest Entry Form</h1>
+        <p>Want to trade in your old sneakers for a custom pair of Forcefields? Make a case for why your shoes have <em>got to go</em> and you may be one of ten lucky winners.</p>
+        
+        <h2>Contest Entry Information</h2>
+        <form>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name">
+            <br><br>
+
+            <label for="email">Email Address:</label>
+            <input type="email" id="email" name="email">
+            <br><br>
+
+            <label for="phone">Telephone Number:</label>
+            <input type="tel" id="phone" name="phone">
+            <br><br>
+
+            <label for="description">My shoes are SO old...</label><br>
+            <textarea id="description" name="description" rows="4" cols="50" maxlength="300"></textarea>
+            <br><br>
+
+            <fieldset>
+                <legend>Custom Shoe Design</legend>
+                
+                <fieldset>
+                    <legend>Color (choose one):</legend>
+                    <input type="radio" id="red" name="color" value="Red">
+                    <label for="red">Red</label><br>
+
+                    <input type="radio" id="blue" name="color" value="Blue">
+                    <label for="blue">Blue</label><br>
+
+                    <input type="radio" id="black" name="color" value="Black">
+                    <label for="black">Black</label><br>
+
+                    <input type="radio" id="silver" name="color" value="Silver">
+                    <label for="silver">Silver</label>
+                    <br><br>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Features (Choose as many as you want):</legend>
+                    <input type="checkbox" id="sparkly-laces" name="features" value="Sparkly Laces">
+                    <label for="sparkly-laces">Sparkly laces</label>
+                    <br>
+
+                    <input type="checkbox" id="metallic-logo" name="features" value="Metallic Logo">
+                    <label for="metallic-logo">Metallic logo</label>
+                    <br>
+
+                    <input type="checkbox" id="light-up-heels" name="features" value="Light-up Heels">
+                    <label for="light-up-heels">Light-up heels</label>
+                    <br>
+
+                    <input type="checkbox" id="mp3-enabled" name="features" value="MP3 Enabled">
+                    <label for="mp3-enabled">MP3-enabled</label>
+                    <br><br>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Size</legend>
+                    <label for="size">Sizes reflect standard men's sizes:</label>
+                    <input type="number" id="size" name="size" min="5" max="15" value="9">
+                </fieldset>
+            </fieldset>
+
+            <button type="submit">Pimp My Shoes!</button>
+            <button type="reset">Reset</button>
+        </form>
+    </div>
+</body>
+</html>
