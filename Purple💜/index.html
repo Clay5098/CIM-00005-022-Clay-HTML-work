@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Poetry Book</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+    html, body {
+        height: 100%;
+        margin: 0;
+        font-family: 'Arial', sans-serif;
+    }
+    
+    /* General background color and images for the page */
+    body {
+        background-color: #67b8d1; /* Fallback background color */
+        background-image: url('images/purple4.jpeg'); /* Background image for all pages */
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+    }
+    /* Cover page background image */
+    .cover-page {
+        height: 100vh; /* Full viewport height */
+        background-image: url('images/purple.jpeg'); /* Different background for cover page */
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: rgb(86, 153, 197);
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    }
+    
+    /* Styling for the cover page content */
+    .cover-content {
+        text-align: center;
+    }
+    
+    .cover-content h1 {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+    }
+    
+    .cover-content h2 {
+        font-size: 1.5rem;
+        margin-bottom: 2rem;
+    }
+    
+    .cover-content button {
+        padding: 10px 20px;
+        font-size: 1rem;
+        background-color: #be80c0;
+        color: rgb(27, 24, 24);
+        border: none;
+        cursor: pointer;
+        border-radius: 5px;
+    }
+    
+    .cover-content button:hover {
+        background-color: #82a7ad;
+    }
+    
+    /* Section background for other pages */
+    section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        background-color: #e0e0e0; /* Default background color for sections */
+        color: #ffffff;
+        padding: 20px;
+        box-sizing: border-box;
+        background-image: url("images/Cute\ Cat.jpeg");
+        background-size: cover;
+        background-position: center;
+        text-align: center;
+    }
+    section h2 {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+    }
+    
+    section p {
+        font-size: 1rem;
+        line-height: 1.6;
+        max-width: 800px;
+        text-align: center;
+    }
+    section.page {
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    background-color: #d896d8;
+    color: rgb(75, 66, 66);
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #719fbd;
+}
+    
+    /* Navigation Bar Styles */
+    nav {
+        background-color: rgba(0, 0, 0, 0.7);
+        position: sticky;
+        top: 0;
+        padding: 10px;
+        z-index: 100;
+    }
+    
+    nav ul {
+        list-style: none;
+        display: flex;
+        justify-content: center;
+        padding: 0;
+        margin: 0;
+    }
+    
+    nav ul li {
+        margin: 0 20px;
+    }
+    
+    nav ul li a {
+        color: white;
+        text-decoration: none;
+        font-size: 1.1rem;
+    }
+    
+    nav ul li a:hover {
+        color: #ddd;
+    }
+    
+    /* Footer Styles */
+    footer {
+        background-color: #333;
+        color: white;
+        text-align: center;
+        padding: 20px;
+    }
+    
+    footer p {
+        margin: 0;
+        font-size: 1rem;
+    }
+/* Watermark styling */
+body::after {
+    content: "@klay💨";
+    position: absolute;
+    bottom: 10px;  /* Adjust this to position watermark */
+    right: 10px;   /* Adjust this to position watermark */
+    font-size: 2rem;
+    color: rgba(255, 255, 255, 0.3); /* Light white color with transparency */
+    pointer-events: none;  /* Ensures it doesn't interfere with clickable elements */
+    z-index: -1;  /* Makes sure it's behind all other content */
+}
+
+/* Section with page-specific background */
+section.page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 20px; /* Adds some padding to the sides */
+    box-sizing: border-box;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    text-align: center; /* Centers the text horizontally */
+}
+
+/* Adjust the poetry paragraphs */
+section.page p {
+    max-width: 600px; /* Limit the width of the text */
+    margin-top: 20px; /* Space between header and poetry */
+    text-align: center; /* Center text horizontally */
+    font-size: 1.2rem; /* Adjust font size if needed */
+    line-height: 1.6; /* Line height for better readability */
+}
+@page {
+  size: A4;
+  margin: 20mm;
+}
+
+.page-break {
+  page-break-before: always;
+}
+@media print {
+  body {
+    font-size: 12pt;
+  }
+  .no-print {
+    display: none;
+  }
+}
+</style>
+    
+</head>
+<body>
+    <!-- Cover Page -->
+    <section class="cover-page">
+        <div class="cover-content">
+            <h1>TWAS PURPLE</h1>
+            <h2>Clayton Murule</h2>
+            <button onclick="nextPage('prologue')">Enter</button>
+        </div>
+    </section>
+
+    <!-- Prologue Page -->
+    <section clas="page-background" class="page" id="prologue">
+        <h2>Prologue</h2>
+        <p>My name is Clayton Murule, born on November 10, 2003, and raised by my single mother, Elizabeth Ndhambi—though everyone knew her as Liz. My life has been a journey shaped by her strength, resilience, and endless love. Growing up, she was my anchor, my teacher, and my source of light, even in the darkest of times.
+
+            Through her, I learned about love, sacrifice, and the kind of courage that never fades. Liz was more than just a mother—she was my friend, my guide, and the fiercest protector anyone could ask for. No matter how tough life became, she never stopped fighting for us. She taught me what it meant to stand tall, no matter how many times life tried to knock you down.
+            
+            When my sister, Janel Wambui, came into this world, it was like Liz had left a part of her behind for me to cherish and protect. Janel is the heart of my strength now, and through her, I carry forward my mother's spirit. This book, this collection of thoughts and memories, is a tribute to the woman who taught me to rise above, to love deeply, and to live fully.
+            
+            To Liz, my mother, my hero—this is for you.</p>
+            <br>
+            <button onclick="prevPage('cover-page')">Previous</button>
+            <br><br>
+        <button onclick="nextPage('page1')">Start Reading</button>
+        <br>
+    </section>
+
+    <!-- Poetry Pages -->
+    <section class="page" id="page1">
+        <h3>Page 1</h3>
+        <p>In a world painted with shades of sorrow,<br>
+           A woman stood tall, in the face of tomorrow,<br>
+           Her heart, a beacon in the storm's embrace.<br>
+           She carried hope in the deepest space.</p>
+           <br><br><br><br>
+           <button onclick="prevPage('prologue')">Previous</button>
+           <br><br>
+        <button onclick="nextPage('page2')">Next</button>
+    </section>
+
+    <section class="page" id="page2">
+        <h3>Page 2</h3>
+        <p>"Play dumb, but don't be dumb", she'd say,<br>
+           A lesson for life in a playful way.<br>
+           Wisdom wrapped in a joke, so sly,<br>
+           She taught me to think and never comply.<br></p>
+           <br><br><br><br>
+           <button onclick="prevPage('page1')">Previous</button>
+           <br><br>
+        <button onclick="nextPage('page3')">Next</button>
+    </section>
+
+    <section class="page" id="page3">
+        <h3>Page 3</h3>
+        <p>Her favourite moments were sweet and rare,<br>
+           When we'd watch movies, lost in the air,<br>
+           A solo treatment, a time to heal,<br>
+           And she'd take me with her, to feel, to feel.<br></p>
+           <br><br><br><br>
+           <button onclick="prevPage('page2')">Previous</button>
+           <br><br>
+        <button onclick="nextPage('page4')">Next</button>
+    </section>
+    <section class="page" id="page4">
+        <h3>Page 4</h3>
+        <p>In those moments, her calm, her grace,<br>
+            I found peace in that sacred space,<br>
+            She shared her word, her quiet treat,<br>
+            In those gentle times, life felt so complete.<br></p>
+            <br><br><br><br>
+            <button onclick="prevPage('page3')">Previous</button>
+            <br><br>
+        <button onclick="nextPage('page5')">Next</button>
+    </section>
+    <section class="page" id="page5">
+        <h3>Page 5</h3>
+        <p>My cousins tell me of her charm,<br>
+            How she kept their secrets, safe from harm,<br>
+            Fun and free, with joy untamed,<br>
+            Her spirit wild, forever named ☁<br></p>
+            <br><br><br><br>
+            <button onclick="prevPage('page4')">Previous</button>
+            <br><br>
+        <button onclick="nextPage('page6')">Next</button>
+    </section>
+    <section class="page" id="page6">
+        <h3>Page 6</h3>
+        <p>Through years of struggle, through pain unspoken,<br>
+            Her spirit, unbroken, a love unbroken.<br>
+            Through fists of darkness, she did rise,<br>
+            A worrior beneath the endless skies.<br></p>
+            <br><br><br><br>
+            <button onclick="prevPage('page5')">Previous</button>
+            <br><br>
+        <button onclick="nextPage('page7')">Next</button>
+    </section>
+    <section class="page" id="page7">
+        <h3>Page 7</h3>
+        <p>She wore strength like a shield, through bruised and torn,<br>
+            In a world where love was ever scorned.<br>
+            And though her hands bore the narks of grief,<br>
+            She built a world beyond belief.<br></p>
+            <br><br><br><br>
+            <button onclick="prevPage('page6')">Previous</button>
+            <br><br>
+        <button onclick="nextPage('page8')">Next</button>
+    </section>
+    <section class="page" id="page8">
+        <h3>Page 8</h3>
+        <p>She met him once, a man so cold,<br>
+            And I watched her dreams and hope unfold,<br>
+            But love turned to rage, and she stood alone,<br>
+            Fighting for us in every tone.<br></p>
+            <br><br><br><br>
+            <button onclick="prevPage('page7')">Previous</button>
+            <br><br>
+        <button onclick="nextPage('page9')">Next</button>
+    </section>
+    <section class="page"id="page9">
+        <h3>Page 9</h3>
+        <p>Then came the day, she left the past,<br>
+            But another shadow came, so vast.<br>
+            A man who wore a different face,<br>
+            But carried the same cruel empty space.<br></p>
+            <br><br><br><br>
+            <button onclick="prevPage('page8')">Previous</button>
+            <br><br>
+        <button onclick="nextPage('page10')">Next</button>
+    </section>
+<section class="page"id="page10">
+    <h3>Page 10</h3>
+    <p>The beatings, the rage, the harsh words thrown,<br>
+        But still, she stood, never alone.<br>
+        For in her eyes, I saw thee Fight-<br>
+        A mother's love burning bright.<br></p>
+        <br><br><br><br>
+        <button onclick="prevPage('page9')">Previous</button>
+        <br><br>
+    <button onclick="nextPage('page11')">Next</button>
+</section>
+<section class="page" id="page11">
+    <h3>Page 11</h3>
+    <p>Through every storm, through every tear,<br>
+        She gave us strength, she kept us near.<br>
+        And when we gathered 'round her table,<br>
+        She fed us all, with love so stable.<br></p>
+        <br><br><br><br>
+        <button onclick="prevPage('page10')">Previous</button>
+        <br><br>
+    <button onclick="nextPage('page12')">Next</button>
+</section>
+<section class="page" id="page12">
+    <h3>Page 12</h3>
+    <p>She cooked the meals that made us smile,<br>
+        And her warmth, it lingered for a while.<br>
+        Wuth laughter, secrets, stories shared,<br>
+        A cheeky grin, a heart that cared.<br></p>
+        <br><br><br><br>
+        <button onclick="prevPage('page11')">Previous</button>
+        <br><br>
+    <button onclick="nextPage('page13')">Next</button>
+</section>
+<section class="page" id="page13">
+    <h3>Page 13</h3>
+    <p>Her stories were like threads of light,<br>
+        Guiding through the darkest nights.<br>
+        With every word, a lesson taught,<br>
+        A wisdom deep, a love well-wrought.<br></p>
+        <br><br><br><br>
+        <button onclick="prevPage('page12')">Previous</button>
+        <br><br>
+    <button onclick="nextPage('page14')">Next</button>
+</section>
+<section class="page"id="page14">
+    <h3>Page 14</h3>
+    <p>She motivated me, each and every day,<br>
+        To rise above, to find my way.<br>
+        With every challenge, every doubt,<br>
+        She whispered strength when I called out.<br></p>
+        <br><br><br><br>
+        <button onclick="prevPage('page13')">Previous</button>
+        <br><br>
+    <button onclick="nextPage('page15')">Next</button>
+</section>
+<section class="page"id="page15">
+    <h3>Page 15</h3>
+    <p>And though I was young, Ignorant, naive,<br>
+        Her pain, her strength, I couldn't believe.<br>
+        I wished for a way to protect her more,<br>
+        To hea the wounds, that life tore.<br></p>
+        <br><br><br><br>
+        <button onclick="prevPage('page14')">Previous</button>
+        <br><br>
+    <button onclick="nextPage('page16')">Next</button>
+</section>
+<section class="page"id="page16">
+    <h3>Page 16</h3>
+    <p>
+        Then one day she met another's gaze,<br>
+        A little girl, in a world of praise.<br>
+        And I vowed to her, through every tear,<br>
+        To keep her close, to always be near.<br></p>
+        <br><br><br><br>
+        <button onclick="prevPage('page15')">Previous</button>
+        <br><br>
+    <button onclick="nextPage('page17')">Next</button>
+</section>
+<section class="page" id="page17">
+    <h3>Page 17</h3>
+    <p>Then years passed by, like sand in the wind,<br>
+        And though I was torn, my heart would mend.<br>
+        But then, fate struck, with a heavy blow-<br>
+        My mom was gone, and I didn't know😢<br></p>
+        <br><br><br><br>
+        <button onclick="prevPage('page16')">Previous</button>
+        <br><br>
+    <button onclick="nextPage('page18')">Next</button>
+</section>
+<section class="page" id="page18">
+    <h3>Page 18</h3>
+    <p>The years had passed, but I still felt young,<br>
+        In a world now silent, the songs unsung.<br>
+        She left me my sister, my heart's guiding star,<br>
+        The piece of her that will never be far.<br></p>
+        <br><br><br><br>
+        <button onclick="prevPage('page17')">Previous</button>
+        <br><br>
+    <button onclick="nextPage('page19')">Next</button>
+</section>
+<section class="page" id="page19">
+    <h3>Page 19</h3>
+    <p>Now I stand, her strength in my veins,<br>
+        Through joy and sorrow, through losses and gains.<br>
+        I promised her once, and I'll promise her again,<br>
+        To love and protect, through storm and rain.<br></p>
+        <br><br><br><br>
+        <button onclick="prevPage('page18')">Previous</button>
+        <br><br>
+    <button onclick="nextPage('page20')">Next</button>
+</section>
+<section class="page" id="page20">
+    <h3>Page 20</h3>
+    <p>For in myt sister's eyes, I see her face,<br>
+        Her love, her strength, her endless grace.<br>
+        And though she's gone, here spirit stays,<br>
+        Guiding me through life's tangled maze.<br></p>
+        <br><br><br><br>
+        <button onclick="prevPage('page19')">Previous</button>
+        <br><br>
+    <button onclick="nextPage('page21')">Next</button>
+</section>
+<section class="page" id="page21">
+    <h3>Page 21</h3>
+    <p>Purple, the color of strength and grace,<br>
+        The shade of love, in every space,<br>
+        And through the darkest hours of night,<br>
+        Her spirit glows, a guiding light✨<br></p>
+        <br><br><br><br>
+        <button onclick="prevPage('page20')">Previous</button>
+        <br><br>
+    <button onclick="nextPage('page22')">Next</button>
+</section>
+<section class="page"id="page22">
+    <h3>Page 22</h3>
+    <p>In every challenge, every storm I face,<br>
+        I carry her love, her sacred trace.<br>
+        For she taught me, with every breath and tear,<br>
+        To rise above, to conquer fear.<br></p>
+        <br><br><br><br>
+        <button onclick="prevPage('page21')">Previous</button>
+        <br><br>
+    <button onclick="nextPage('page23')">Next</button>
+</section>
+<section class="page" id="page23">
+    <h3>Page 23</h3>
+    <p>Her legacy lives, not in past,<br>
+        But in the love I give, and make it last.<br>
+        A promise kept, through blood and time,<br>
+        Her spirit with me, eternally sublime💜💜<br></p>
+        <br><br><br><br>
+        <button onclick="prevPage('page22')">Previous</button>
+        <br><br>
+     <!-- Optionally hide the "Next" button or change it to "Finish" -->
+     <button onclick="finishReading()">Finish</button>
+</section>
+ <!-- Add more pages similarly -->
+    
+    <!-- Navigation Script -->
+     <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const pages = document.querySelectorAll('.page');
+        const coverPage = document.querySelector('.cover-page');
+        
+        pages.forEach(page => page.style.display = 'none'); // Hide all pages initially
+        coverPage.style.display = 'block'; // Show the cover page first
+    });
+    
+    function nextPage(pageId) {
+        const pages = document.querySelectorAll('.page');
+        const coverPage = document.querySelector('.cover-page');
+        
+        // Hide the cover page and all other pages
+        coverPage.style.display = 'none';
+        pages.forEach(page => page.style.display = 'none'); 
+        
+        // Show the target page
+        document.getElementById(pageId).style.display = 'block'; 
+    }
+    
+    function prevPage(pageId) {
+        const pages = document.querySelectorAll('.page');
+        
+        // Hide all pages
+        pages.forEach(page => page.style.display = 'none'); 
+        
+        // Show the target page
+        document.getElementById(pageId).style.display = 'block'; 
+    }
+    function finishReading() {
+        // This could redirect to another page or display a message
+        alert("Thank you for reading my poetry book!");
+        // Optionally, you could redirect here:
+        // window.location.href = "your-end-page.html";
+    }
+</script>
+</body>  
+</html>

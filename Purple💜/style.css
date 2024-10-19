@@ -1,0 +1,186 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+}
+
+/* General background color and images for the page */
+body {
+    background-color: #f4f4f4; /* Fallback background color */
+    background-image: url('images/purple4.jpeg'); /* Background image for all pages */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+/* Cover page background image */
+.cover-page {
+    height: 100vh; /* Full viewport height */
+    background-image: url('images/purple.jpeg'); /* Different background for cover page */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgb(255, 255, 255);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+/* Styling for the cover page content */
+.cover-content {
+    text-align: center;
+}
+
+.cover-content h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.cover-content h2 {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.cover-content button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    background-color: #333;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.cover-content button:hover {
+    background-color: #555;
+}
+
+/* Section background for other pages */
+section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #e0e0e0; /* Default background color for sections */
+    color: #333;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Set background image for all pages except the cover page */
+.page-background {
+    background-image: url('images/Cute\ Cat.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+/* Heading and content styles for sections */
+section h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+section p {
+    font-size: 1rem;
+    line-height: 1.6;
+    max-width: 800px;
+    text-align: center;
+}
+
+/* Navigation Bar Styles */
+nav {
+    background-color: rgba(0, 0, 0, 0.7);
+    position: sticky;
+    top: 0;
+    padding: 10px;
+    z-index: 100;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    margin: 0 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.1rem;
+}
+
+nav ul li a:hover {
+    color: #ddd;
+}
+
+/* Footer Styles */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+footer p {
+    margin: 0;
+    font-size: 1rem;
+}
+/* Watermark styling */
+body::after {
+    content: "@klay💨";
+    position: absolute;
+    bottom: 10px;  /* Adjust this to position watermark */
+    right: 10px;   /* Adjust this to position watermark */
+    font-size: 2rem;
+    color: rgba(255, 255, 255, 0.3); /* Light white color with transparency */
+    pointer-events: none;  /* Ensures it doesn't interfere with clickable elements */
+    z-index: -1;  /* Makes sure it's behind all other content */
+}
+
+/* Section with page-specific background */
+section.page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 20px; /* Adds some padding to the sides */
+    box-sizing: border-box;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    text-align: center; /* Centers the text horizontally */
+}
+
+/* Adjust the poetry paragraphs */
+section.page p {
+    max-width: 600px; /* Limit the width of the text */
+    margin-top: 20px; /* Space between header and poetry */
+    text-align: center; /* Center text horizontally */
+    font-size: 1.2rem; /* Adjust font size if needed */
+    line-height: 1.6; /* Line height for better readability */
+}
+@page {
+    size: A4;
+    margin: 20mm;
+  }
+  
+  .page-break {
+    page-break-before: always;
+  }
+  @media print {
+    body {
+      font-size: 12pt;
+    }
+    .no-print {
+      display: none;
+    }
+  }
+    
