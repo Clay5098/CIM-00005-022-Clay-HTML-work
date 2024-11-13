@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Employee Management System</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="sidebar">
+    <h2>Employee Management</h2>
+    <ul>
+      <li><a href="#dashboard">Dashboard</a></li>
+      <li><a href="#registration">Registration</a></li>
+      <li><a href="#login">Login</a></li>
+      <li><a href="#finance">Finance</a></li>
+      <li><a href="#departments">Departments</a></li>
+      <li><a href="#procurement">Procurement</a></li>
+      <li><a href="#leave">Leave</a></li>
+      <li><a href="#settings">Settings</a></li>
+      <li><a href="#logout">Logout</a></li>
+    </ul>
+  </div>
+
+  <div class="content">
+    <section id="dashboard" class="section">
+      <h1>Dashboard</h1>
+      <div class="card">Employee Count: 50</div>
+      <div class="card">Active Leaves: 5</div>
+      <div class="card">Pending Procurements: 3</div>
+      <div class="card">Financial Summary: Sh 500,000</div>
+    </section>
+
+    <section id="registration" class="section">
+      <h1>Registration</h1>
+      <form>
+        <label>Full Name</label>
+        <input type="text" placeholder="Enter full name">
+        <label>Email</label>
+        <input type="email" placeholder="Enter email">
+        <label>Department</label>
+        <input type="text" placeholder="Enter department">
+        <label>Password</label>
+        <input type="password" placeholder="Enter password">
+        <button type="submit">Register</button>
+      </form>
+    </section>
+
+    <section id="login" class="section">
+      <h1>Login</h1>
+      <form>
+        <label>Username</label>
+        <input type="text" placeholder="Enter username">
+        <label>Password</label>
+        <input type="password" placeholder="Enter password">
+        <button type="submit">Login</button>
+      </form>
+    </section>
+
+    <section id="finance" class="section">
+      <h1>Finance</h1>
+      <div class="card">Monthly Expenditure: Sh 10,000</div>
+      <div class="card">Payroll: Sh 200,000</div>
+      <div class="card">Pending Approvals: 10</div>
+    </section>
+
+    <section id="departments" class="section">
+      <h1>Departments</h1>
+      <div class="card">IT Department</div>
+      <div class="card">HR Department</div>
+      <div class="card">Finance Department</div>
+    </section>
+
+    <section id="procurement" class="section">
+      <h1>Procurement</h1>
+      <form>
+        <label>Product Name</label>
+        <input type="text" placeholder="Enter product name">
+        <label>Quantity</label>
+        <input type="number" placeholder="Enter quantity">
+        <label>Supplier Name</label>
+        <input type="text" placeholder="Enter supplier name">
+        <button type="submit">Submit Request</button>
+      </form>
+    </section>
+
+    <section id="leave" class="section">
+      <h1>Leave</h1>
+      <form>
+        <label>Leave Type</label>
+        <select>
+          <option>Annual</option>
+          <option>Sick</option>
+          <option>Casual</option>
+        </select>
+        <label>Start Date</label>
+        <input type="date">
+        <label>End Date</label>
+        <input type="date">
+        <button type="submit">Request Leave</button>
+      </form>
+    </section>
+  </div>
+
+</body>
+</html>
